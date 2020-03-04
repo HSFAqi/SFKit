@@ -1,0 +1,6 @@
+framework module SFKit {
+  umbrella header "SFKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
