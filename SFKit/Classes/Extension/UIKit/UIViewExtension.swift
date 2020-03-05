@@ -232,4 +232,19 @@ public extension UIView {
         layer.render(in: context)
         return UIGraphicsGetImageFromCurrentImageContext()
     }
+    
+    /// 第一响应
+    func firstResponder() -> UIView? {
+        var views = [UIView](arrayLiteral: self)
+        var index = 0
+        repeat {
+            let view = views[index]
+            if view.isFirstResponder {
+                return view
+            }
+            views.append(contentsOf: view.subviews)
+            index += 1
+        } while index < views.count
+        return nil
+    }
 }
