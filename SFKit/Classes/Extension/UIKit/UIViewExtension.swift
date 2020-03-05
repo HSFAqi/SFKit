@@ -117,6 +117,31 @@ public extension UIView {
     func setCorner(radius: CGFloat) {
         layer.cornerRadius = radius
     }
+    
+    /// 添加指定圆角
+    ///
+    /// 该方法会造成离屏渲染
+    func setCorners(_ corners: UIRectCorner, radius: CGFloat) {
+        let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = maskPath.cgPath
+        layer.mask = shapeLayer
+    }
+}
+
+// MARK: - gesture
+extension UIView {
+    /// 添加点击手势
+    func addTapAction(target: Any?, action: Selector?) {
+        self.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: target, action: action)
+        self.addGestureRecognizer(tap)
+    }
+    
+    /// 移除view上所有的手势
+    func removeGestureRecognizers() {
+        gestureRecognizers?.forEach(removeGestureRecognizer)
+    }
 }
 
 // MARK: - frame
