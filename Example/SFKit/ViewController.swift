@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     var items = [String]()
     var collectionView: SFManagerCollectionView! {
         didSet{
+            collectionView.clipsToBounds = false
             collectionView.backgroundColor = UIColor.white
             collectionView.dataSource = self
             collectionView.delegate = self
@@ -55,7 +56,7 @@ class ViewController: UIViewController {
         let w = (screenW-space*3)/2
         let h = w / scale
         layout.itemSize = CGSize(width: w, height: h)
-        let collect = SFManagerCollectionView(frame: CGRect(x: 0, y: 0, width: screenW, height: h+space*2), collectionViewLayout: layout)
+        let collect = SFManagerCollectionView(frame: CGRect(x: 0, y: screenH-(h+space*2), width: screenW, height: h+space*2), collectionViewLayout: layout)
         collect.direction = .horizontal
         collectionView = collect
         self.view.addSubview(collectionView)
@@ -100,7 +101,10 @@ extension ViewController: UICollectionViewDataSource {
     }
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: TestCell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: TestCell.self), for: indexPath) as! TestCell
-        cell.imgView.image = UIImage(named: items[indexPath.row])
+        let image = UIImage(named: items[indexPath.row])
+        let w = (screenW-space*3)/2
+        let h = w / scale
+        cell.imgView.image = image?.setCorner(radius: 10, rect: CGRect(x: 0, y: 0, width: w, height: h))
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
