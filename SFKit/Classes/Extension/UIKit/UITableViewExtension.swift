@@ -17,14 +17,43 @@ public extension UITableView {
         guard indexPath.row < numberOfRows(inSection: indexPath.section) else { return }
         scrollToRow(at: indexPath, at: position, animated: animated)
     }
-    
-    /// 滚动到顶部
-    func scrollToTop(position: ScrollPosition, animated: Bool) {
-        scrollTo(row: 0, section: 0, position: position, animated: animated)
+}
+
+// MARK: - CURD
+extension UITableView {
+    /// 插入row
+    func insertRow(_ row: Int, inSection section: Int, animation: RowAnimation) {
+        let indexPath = IndexPath(row: row, section: section)
+        insertRows(at: [indexPath], with: animation)
     }
     
-    /// 滚动到底部
-    func scrollToBottom(position: ScrollPosition, animated: Bool) {
-        scrollTo(row: numberOfRows(inSection: numberOfSections), section: numberOfSections, position: position, animated: animated)
+    /// 删除row
+    func deleteRow(_ row: Int, inSection section: Int, animation: RowAnimation) {
+        let indexPath = IndexPath(row: row, section: section)
+        deleteRows(at: [indexPath], with: animation)
+    }
+    
+    /// 更新row
+    func reloadRow(_ row: Int, inSection section: Int, animation: RowAnimation) {
+        let indexPath = IndexPath(row: row, section: section)
+        reloadRows(at: [indexPath], with: animation)
+    }
+    
+    /// 插入section
+    func insertSection(_ section: Int, animation: RowAnimation) {
+        let sections = IndexSet(integer: section)
+        insertSections(sections, with: animation)
+    }
+    
+    /// 删除section
+    func deleteSection(_ section: Int, animation: RowAnimation)  {
+        let sections = IndexSet(integer: section)
+        deleteSections(sections, with: animation)
+    }
+    
+    /// 更新section
+    func reloadSection(_ section: Int, animation: RowAnimation)  {
+        let sections = IndexSet(integer: section)
+        reloadSections(sections, with: animation)
     }
 }

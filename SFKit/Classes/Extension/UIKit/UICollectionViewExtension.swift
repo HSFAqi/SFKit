@@ -17,14 +17,43 @@ public extension UICollectionView {
         guard indexPath.row < numberOfItems(inSection: indexPath.section) else { return }
         scrollToItem(at: indexPath, at: position, animated: animated)
     }
-    
-    /// 滚动到顶部
-    func scrollToTop(position: ScrollPosition, animated: Bool) {
-        scrollTo(item: 0, section: 0, position: position, animated: animated)
+}
+
+// MARK: - CURD
+extension UICollectionView {
+    /// 插入item
+    func insertItem(_ row: Int, inSection section: Int) {
+        let indexPath = IndexPath(row: row, section: section)
+        insertItems(at: [indexPath])
     }
     
-    /// 滚动到底部
-    func scrollToBottom(position: ScrollPosition, animated: Bool) {
-        scrollTo(item: numberOfItems(inSection: numberOfSections), section: numberOfSections, position: position, animated: animated)
+    /// 删除item
+    func deleteItem(_ row: Int, inSection section: Int) {
+        let indexPath = IndexPath(row: row, section: section)
+        deleteItems(at: [indexPath])
+    }
+    
+    /// 更新item
+    func reloadItem(_ row: Int, inSection section: Int) {
+        let indexPath = IndexPath(row: row, section: section)
+        reloadItems(at: [indexPath])
+    }
+    
+    /// 插入section
+    func insertSection(_ section: Int) {
+        let sections = IndexSet(integer: section)
+        insertSections(sections)
+    }
+    
+    /// 删除section
+    func deleteSection(_ section: Int)  {
+        let sections = IndexSet(integer: section)
+        deleteSections(sections)
+    }
+    
+    /// 更新section
+    func reloadSection(_ section: Int)  {
+        let sections = IndexSet(integer: section)
+        reloadSections(sections)
     }
 }

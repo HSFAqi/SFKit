@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		513D2190240F6677002CBBEE /* TestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D218E240F6677002CBBEE /* TestCell.swift */; };
 		513D2191240F6677002CBBEE /* TestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 513D218F240F6677002CBBEE /* TestCell.xib */; };
+		516F71372412BA540043E3B7 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516F71362412BA540043E3B7 /* HomeVC.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		4DE7FA6E0AC8B0D67B63F472 /* Pods-SFKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SFKit_Example.debug.xcconfig"; path = "Target Support Files/Pods-SFKit_Example/Pods-SFKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		513D218E240F6677002CBBEE /* TestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCell.swift; sourceTree = "<group>"; };
 		513D218F240F6677002CBBEE /* TestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestCell.xib; sourceTree = "<group>"; };
+		516F71362412BA540043E3B7 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		59B0FF3495CFD08D6B9FE12A /* Pods-SFKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SFKit_Tests.debug.xcconfig"; path = "Target Support Files/Pods-SFKit_Tests/Pods-SFKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SFKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				516F71362412BA540043E3B7 /* HomeVC.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				513D218E240F6677002CBBEE /* TestCell.swift */,
 				513D218F240F6677002CBBEE /* TestCell.xib */,
@@ -359,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				516F71372412BA540043E3B7 /* HomeVC.swift in Sources */,
 				513D2190240F6677002CBBEE /* TestCell.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);

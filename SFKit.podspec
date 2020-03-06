@@ -33,11 +33,34 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'SFKit/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'SFKit' => ['SFKit/Assets/*.png']
-  # }
+   s.resource_bundles = {
+     'SFKit' => ['SFKit/Assets/*.png']
+   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  
+  
+  # MARK: - subspec
+  
+  s.subspec 'Extension' do |ss|
+      ss.source_files = 'SFKit/Classes/Extension/**/*'
+      ss.subspec 'UIKit' do |sss|
+          sss.source_files = 'SFKit/Classes/Extension/UIKit/*'
+      end
+      ss.subspec 'Foundation' do |sss|
+          sss.source_files = 'SFKit/Classes/Extension/Foundation/*'
+      end
+  end
+
+  s.subspec 'Base' do |ss|
+      ss.source_files = 'SFKit/Classes/Base/**/*'
+  end
+  
+  s.subspec 'CollectionView' do |ss|
+      ss.source_files = 'SFKit/Classes/CollectionView/**/*'
+  end
+  
+  
 end

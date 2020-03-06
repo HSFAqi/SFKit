@@ -40,3 +40,13 @@ public extension UIImage {
         return image!
     }
 }
+
+public extension UIImage {
+    /// 获取Bundle中的图片
+    class func bundleImageWithName(_ name: String, type: String = ".png") -> UIImage? {
+        let bundle = Bundle.getBundle(forClass: SFBaseVC.self as AnyClass, resource: "SFKit")
+        let filePath = bundle?.path(forResource: name, ofType: type)
+        let image = UIImage(contentsOfFile: filePath ?? "")
+        return image
+    }
+}

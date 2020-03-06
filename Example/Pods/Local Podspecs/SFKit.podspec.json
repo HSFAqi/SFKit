@@ -20,5 +20,34 @@
   },
   "swift_versions": "5.0",
   "source_files": "SFKit/Classes/**/*",
+  "resource_bundles": {
+    "SFKit": [
+      "SFKit/Assets/*.png"
+    ]
+  },
+  "subspecs": [
+    {
+      "name": "Extension",
+      "source_files": "SFKit/Classes/Extension/**/*",
+      "subspecs": [
+        {
+          "name": "UIKit",
+          "source_files": "SFKit/Classes/Extension/UIKit/*"
+        },
+        {
+          "name": "Foundation",
+          "source_files": "SFKit/Classes/Extension/Foundation/*"
+        }
+      ]
+    },
+    {
+      "name": "Base",
+      "source_files": "SFKit/Classes/Base/**/*"
+    },
+    {
+      "name": "CollectionView",
+      "source_files": "SFKit/Classes/CollectionView/**/*"
+    }
+  ],
   "swift_version": "5.0"
 }
